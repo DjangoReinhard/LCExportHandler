@@ -1,4 +1,10 @@
-package de.schwarzrot.linuxcnc.export;
+package de.schwarzrot.linuxcnc.export
+
+import de.schwarzrot.linuxcnc.data.CategoryInfo
+import de.schwarzrot.linuxcnc.data.LibInfo
+import de.schwarzrot.linuxcnc.data.ToolInfo
+import java.lang.Exception
+
 /* 
  * **************************************************************************
  * 
@@ -24,15 +30,7 @@ package de.schwarzrot.linuxcnc.export;
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  * **************************************************************************
- */
-
-
-import de.schwarzrot.linuxcnc.data.CategoryInfo;
-import de.schwarzrot.linuxcnc.data.LibInfo;
-import de.schwarzrot.linuxcnc.data.ToolInfo;
-
-
-/**
+ */ /**
  * ToolLibrary is organized this way: Toplevel toolLibrary gets export values by
  * {LibInfo} and has
  * Childs of Category, which can be nested. Category elements gets export values
@@ -56,24 +54,26 @@ import de.schwarzrot.linuxcnc.data.ToolInfo;
  *
  * @author Django Reinhard
  */
-public interface IExportHandler {
-   public void closeCategory(CategoryInfo catInfo) throws Exception;
+interface IExportHandler {
+    @Throws(Exception::class)
+    fun closeCategory(catInfo: CategoryInfo)
 
+    @Throws(Exception::class)
+    fun closeLibrary(libInfo: LibInfo)
 
-   public void closeLibrary(LibInfo libInfo) throws Exception;
+    @Throws(Exception::class)
+    fun closeTool(toolInfo: ToolInfo)
 
+    @Throws(Exception::class)
+    fun openCategory(catInfo: CategoryInfo)
 
-   public void closeTool(ToolInfo toolInfo) throws Exception;
+    @Throws(Exception::class)
+    fun openLibrary(libInfo: LibInfo, fileName: String)
 
+    @Throws(Exception::class)
+    fun openTool(toolInfo: ToolInfo)
 
-   public void openCategory(CategoryInfo catInfo) throws Exception;
-
-
-   public void openLibrary(LibInfo libInfo, String fileName) throws Exception;
-
-
-   public void openTool(ToolInfo toolInfo) throws Exception;
-
-
-   public static final String InterfaceVersion = "0.13";
+    companion object {
+        const val InterfaceVersion = "0.13"
+    }
 }
