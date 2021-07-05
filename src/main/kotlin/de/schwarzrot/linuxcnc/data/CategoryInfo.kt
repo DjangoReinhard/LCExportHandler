@@ -26,7 +26,7 @@ package de.schwarzrot.linuxcnc.data
  * 
  * **************************************************************************
  */
-class CategoryInfo {
-    var profile: String? = null
+data class CategoryInfo (
+    var profile: String? = null,
     var name: String? = null
-}
+)

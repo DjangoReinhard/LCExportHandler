@@ -26,8 +26,8 @@ package de.schwarzrot.linuxcnc.data
  * 
  * **************************************************************************
  */
-class LibInfo {
-    var version: String? = null
-    var toolNameTemplate: String? = null
+data class LibInfo(
+    var version: String? = null,
+    var toolNameTemplate: String? = null,
     var numberFormat: String? = null
-}
+)

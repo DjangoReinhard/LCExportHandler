@@ -26,28 +26,28 @@ package de.schwarzrot.linuxcnc.data
  * 
  * **************************************************************************
  */
-class ToolInfo {
-    var toolNumber = 0
-    var toolName: String? = null
-    var profile: String? = null
-    var colletDiameter = 0.0
-    var colletLength = 0.0
-    var shankDiameter = 0.0
-    var freeLength = 0.0
-    var slopeAngle = 0.0
-    var flutes = 0
-    var fluteDiameter = 0.0
-    var fluteLength = 0.0
-    var cuttingRadius = 0.0
-    var cuttingLength = 0.0
-    var cuttingAngle = 0.0
-    var tipDiameter = 0.0
-    var partCode: String? = null
-    var material: String? = null
-    var coating: String? = null
-    var toothLoad = 0.0
-    var helixAngle = 0.0
-    var maxRampAngle = 0.0
-    var comment: String? = null
-    var note: String? = null
-}
+data class ToolInfo(
+    val toolNumber: Int = 0,
+    val toolName: String? = null,
+    val profile: String? = null,
+    val colletDiameter: Double = 0.0,
+    val colletLength: Double = 0.0,
+    val shankDiameter: Double = 0.0,
+    val freeLength: Double = 0.0,
+    val slopeAngle: Double = 0.0,
+    val flutes: Int = 0,
+    val fluteDiameter: Double = 0.0,
+    val fluteLength: Double = 0.0,
+    val cuttingRadius: Double = 0.0,
+    val cuttingLength: Double = 0.0,
+    val cuttingAngle: Double = 0.0,
+    val tipDiameter: Double = 0.0,
+    val partCode: String? = null,
+    val material: String? = null,
+    val coating: String? = null,
+    val toothLoad: Double = 0.0,
+    val helixAngle: Double = 0.0,
+    val maxRampAngle: Double = 0.0,
+    val comment: String? = null,
+    val note: String? = null
+)
