@@ -1,8 +1,9 @@
-package de.schwarzrot.linuxcnc.data;
+package de.schwarzrot.linuxcnc.data
+
 /* 
  * **************************************************************************
  * 
- *  file:   	CategoryInfo.java
+ *  file:   	LibInfo.java
  *  project:  	GUI for linuxcnc
  *  subproject:	base library for exporthandlers
  *  purpose: 	helper classes for creation of exporthandlers, that
@@ -25,27 +26,8 @@ package de.schwarzrot.linuxcnc.data;
  * 
  * **************************************************************************
  */
-
-public class CategoryInfo {
-   public String getName() {
-      return name;
-   }
-
-
-   public String getProfile() {
-      return profile;
-   }
-
-
-   public void setName(String name) {
-      this.name = name;
-   }
-
-
-   public void setProfile(String profile) {
-      this.profile = profile;
-   }
-
-   private String profile;
-   private String name;
-}
+data class LibInfo(
+    var version: String? = null,
+    var toolNameTemplate: String? = null,
+    var numberFormat: String? = null
+)

@@ -1,13 +1,16 @@
-package de.schwarzrot.linuxcnc.data;
+package de.schwarzrot.jar
+
+import java.io.File
+
 /* 
  * **************************************************************************
  * 
- *  file:   	LibInfo.java
+ *  file:   	JarInfo.java
  *  project:  	GUI for linuxcnc
  *  subproject:	base library for exporthandlers
  *  purpose: 	helper classes for creation of exporthandlers, that
  *           	will be used to export tooltables from toolmanager
- *  created: 	3.12.2019 by Django Reinhard
+ *  created: 	4.12.2019 by Django Reinhard
  *  copyright:	all rights reserved
  * 
  *  This program is free software: you can redistribute it and/or modify 
@@ -25,38 +28,8 @@ package de.schwarzrot.linuxcnc.data;
  * 
  * **************************************************************************
  */
-
-public class LibInfo {
-   public String getNumberFormat() {
-      return numberFormat;
-   }
-
-
-   public String getToolNameTemplate() {
-      return toolNameTemplate;
-   }
-
-
-   public String getVersion() {
-      return version;
-   }
-
-
-   public void setNumberFormat(String numberFormat) {
-      this.numberFormat = numberFormat;
-   }
-
-
-   public void setToolNameTemplate(String toolNameTemplate) {
-      this.toolNameTemplate = toolNameTemplate;
-   }
-
-
-   public void setVersion(String version) {
-      this.version = version;
-   }
-
-   private String version;
-   private String toolNameTemplate;
-   private String numberFormat;
-}
+data class JarInfo(
+    var path: File,
+    var className: String,
+    var name: String? = null
+)
