@@ -14,7 +14,7 @@
     </pathconvert>
 
     <target name = "info">
-        <echo>build base-library for Exporthandlers for LinuxCNC-UI</echo>
+        <echo>build base-library for Exporthandlers for JCNCScreen</echo>
         <echo>project-name: ${name}</echo>
         <echo>src-dir: ${src.dir}</echo>
         <echo>build-dir: ${build.dir}</echo>
@@ -33,7 +33,7 @@
     </target>
 
     <target name = "clean" description = "clean output directories">
-        <delete>
+        <delete failonerror="false">
             <fileset dir = "${build.dir}">
                 <include name = "**/*.class"/>
             </fileset>
@@ -41,7 +41,6 @@
     </target>
 
     <target name = "dist" depends="clean,build">
-        <mkdir dir = "${dist.dir}"/>
         <jar destfile = "${dist.dir}/${name}.jar"
              basedir = "${build.dir}"
              includes = "**"
